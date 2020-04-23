@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "蓝湖css转换工具",
+  "description": "用于转化蓝湖css代码写法，以适应多种情况下的复制粘贴，提高开发效率",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://lanhuapp.com/*"],
+      "js": ["transferCss.js"]
+    }
+  ],
+  "permissions": ["tabs", "https://lanhuapp.com/*"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "蓝湖css转换工具"
+  }
+}
