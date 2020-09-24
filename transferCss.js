@@ -10,8 +10,8 @@ function toReactCamel(str) {
     return $1 + $2.toUpperCase() + $3;
   });
   // 属性值，加引号，数字不加引号,分号改逗号
-  return camelCss.replace(/:(.*);/g, function($0, $1) {
-    return isNaN(Number($1)) ? `:"${$1}",` : `:${$1},`;
+  return camelCss.replace(/:\s*(.*);/g, function($0, $1) {
+    return isNaN(Number($1)) ? `: "${$1}",` : `: ${$1},`;
   });
 }
 
@@ -20,8 +20,8 @@ function toRNCamel(str) {
   var specialCss = toReactCamel(str);
 
   // 数字像素,px转为*unitWidth(个人特殊需求)
-  return specialCss.replace(/:"(\d+)(px)",/g, function($0, $1, $2) {
-    return `:${$1}*unitWidth,`;
+  return specialCss.replace(/:\s*"(\d+)(px)",/g, function($0, $1, $2) {
+    return `: ${$1}*unitWidth,`;
   });
 }
 

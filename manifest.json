@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "蓝湖css转换工具",
   "description": "用于转化蓝湖css代码写法，以适应多种情况下的复制粘贴，提高开发效率",
-  "version": "1.0",
+  "version": "1.0.1",
   "content_scripts": [
     {
       "matches": ["https://lanhuapp.com/*"],
